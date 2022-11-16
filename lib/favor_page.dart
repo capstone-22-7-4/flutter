@@ -17,29 +17,7 @@ class _favorPageState extends State<favorPage> {
           foregroundColor: Colors.black
       ),
       body: Center(
-          child: Form(
-            child: GestureDetector(
-              onTap: () => FocusScope.of(context).unfocus(),
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  Padding(padding: EdgeInsets.fromLTRB(70, 10, 0, 30),
-                      child: Text('회원가입', style: TextStyle(color: Colors.black, fontSize: 50))),
-                  Padding(padding: EdgeInsets.fromLTRB(70, 10, 0, 10),
-                      child: Text('이름', style: TextStyle(color: Colors.black, fontSize: 30))),
-                  _favor1Input(),
-                  Padding(padding: EdgeInsets.fromLTRB(70, 10, 0, 10),
-                      child: Text('이메일', style: TextStyle(color: Colors.black, fontSize: 30))),
-                  _favor2Input(),
-                  Padding(padding: EdgeInsets.fromLTRB(70, 10, 0, 10),
-                      child: Text('비밀번호', style: TextStyle(color: Colors.black, fontSize: 30))),
-                  _favor3Input(),
-                  _doneButton()
-                ],
-              ),
-            ),
-          )
+          child: _doneButton(),
       ),
     );
   }
