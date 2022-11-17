@@ -59,7 +59,7 @@ Widget _emailInput(){
     children: [
       SizedBox(height: 70),
       SizedBox(
-        width: 700,
+        width: 500,
         child: TextFormField(
           keyboardType: TextInputType.emailAddress,
           decoration: InputDecoration(
@@ -77,7 +77,7 @@ Widget _passwordInput(){
   return Column(
     children: [
       SizedBox(
-          width: 700,
+          width: 500,
           child: TextFormField(
               obscureText: true,
               keyboardType: TextInputType.emailAddress,

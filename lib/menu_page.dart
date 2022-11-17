@@ -192,7 +192,7 @@ class MenuPage extends StatelessWidget {
     return InkWell(
       onTap: () {
         Navigator.push(context,
-          MaterialPageRoute(builder: (context) => gamePage()),);
+          MaterialPageRoute(builder: (context) => samplePage()),);
       },
       child: Container(
           alignment: Alignment.bottomCenter,
@@ -211,6 +211,17 @@ class MenuPage extends StatelessWidget {
           ),
           child: Text(s, style: TextStyle(fontSize: 20),)
       ),
+    );
+  }
+}
+
+class samplePage extends StatelessWidget {
+  const samplePage({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Text('커뮤니티', style: TextStyle(fontSize: 30, color: Colors.black)),
     );
   }
 }

@@ -58,14 +58,14 @@ class _SignPageState extends State<SignPage> {
       children: [
         Container(
           padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
-          margin: EdgeInsets.only(left: 40, right: 50, bottom: 30, top: 10),
+          margin: EdgeInsets.only(left: 40, right: 50, bottom: 20, top: 10),
           height: 50,
           child: TextFormField(
             focusNode: _nameFocus,
             keyboardType: TextInputType.name,
             decoration: InputDecoration(
                 border: OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(20))), labelText: 'Name'),
-            style: TextStyle(fontSize: 30),
+            style: TextStyle(fontSize: 20),
             // 유효성 검사 나중에 넣기 validator: (value) =>
           ),
         )
@@ -78,14 +78,14 @@ class _SignPageState extends State<SignPage> {
       children: [
         Container(
           padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
-          margin: EdgeInsets.only(left: 40, right: 50, bottom: 30, top: 10),
+          margin: EdgeInsets.only(left: 40, right: 50, bottom: 20, top: 10),
           height: 50,
           child: TextFormField(
             focusNode: _emailFocus,
             keyboardType: TextInputType.emailAddress,
             decoration: InputDecoration(
                 border: OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(20))), labelText: 'E-mail'),
-            style: TextStyle(fontSize: 30),
+            style: TextStyle(fontSize: 20),
             // 유효성 검사 나중에 넣기 validator: (value) =>
           ),
         )
@@ -98,7 +98,7 @@ class _SignPageState extends State<SignPage> {
       children: [
         Container(
           padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
-          margin: EdgeInsets.only(left: 40, right: 50, bottom: 30, top: 10),
+          margin: EdgeInsets.only(left: 40, right: 50, bottom: 20, top: 10),
           height: 50,
           child: TextFormField(
             focusNode: _passwordFocus,
@@ -106,7 +106,7 @@ class _SignPageState extends State<SignPage> {
             obscureText: true,
             decoration: InputDecoration(
                 border: OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(20))), labelText: 'Password'),
-            style: TextStyle(fontSize: 30),
+            style: TextStyle(fontSize: 20),
             // 유효성 검사 나중에 넣기 validator: (value) =>
           ),
         )
@@ -119,7 +119,7 @@ class _SignPageState extends State<SignPage> {
       children: [
         Container(
           padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
-          margin: EdgeInsets.only(left: 40, right: 50, bottom: 30, top: 10),
+          margin: EdgeInsets.only(left: 40, right: 50, bottom: 20, top: 10),
           height: 50,
           child: TextFormField(
             focusNode: _passwordagainFocus,
@@ -127,7 +127,7 @@ class _SignPageState extends State<SignPage> {
             obscureText: true,
             decoration: InputDecoration(
                 border: OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(20))), labelText: 'Password'),
-            style: TextStyle(fontSize: 30),
+            style: TextStyle(fontSize: 20),
             // 유효성 검사 나중에 넣기 validator: (value) =>
           ),
         )

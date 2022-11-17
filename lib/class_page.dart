@@ -9,7 +9,7 @@ class classPage extends StatefulWidget {
 
 class _classPageState extends State<classPage> {
 
-  String whichPic = 'assets/map.PNG';
+  String whichPic = 'assets/map.png';
 
   @override
   Widget build(BuildContext context) {

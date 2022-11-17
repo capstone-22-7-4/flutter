@@ -10,10 +10,10 @@ class favorPage extends StatefulWidget {
 
 class _favorPageState extends State<favorPage> {
 
-  bool? isSoccer = false;
-  bool? isBasketball = false;
-  bool? isBaseball = false;
-  bool? isTennis = false;
+  bool isSoccer = false;
+  bool isBasketball = false;
+  bool isBaseball = false;
+  bool isTennis = false;
 
   @override
   Widget build(BuildContext context) {
@@ -33,13 +33,13 @@ class _favorPageState extends State<favorPage> {
                   Padding(padding: EdgeInsets.fromLTRB(70, 10, 0, 30),
                       child: Text('본인의 운동스타일을 체크해보세요', style: TextStyle(color: Colors.black, fontSize: 50))),
                   SizedBox(height: 50),
-                  _favor('축구', isSoccer),
+                  _favor1('축구'),
                   SizedBox(height: 30),
-                  _favor('농구', isBasketball),
+                  _favor2('농구'),
                   SizedBox(height: 30),
-                  _favor('야구', isBaseball),
+                  _favor3('야구'),
                   SizedBox(height: 30),
-                  _favor('테니스', isTennis),
+                  _favor4('테니스'),
                   SizedBox(height: 30),
                   _doneButton()
                 ],
@@ -50,17 +50,68 @@ class _favorPageState extends State<favorPage> {
     );
   }
 
-  Widget _favor(String t, bool? v){
+  Widget _favor1(String t){
     return Row(
-      children: [
+      children: <Widget>[
         SizedBox(width: 150),
         Text(t),
         SizedBox(width: 50),
         Checkbox(
-            value: v,
+            value: isSoccer,
             onChanged: (value) {
               setState(() {
-                v = value;
+                isSoccer = value!;
+              });
+            })
+      ],
+    );
+  }
+
+  Widget _favor2(String t){
+    return Row(
+      children: <Widget>[
+        SizedBox(width: 150),
+        Text(t),
+        SizedBox(width: 50),
+        Checkbox(
+            value: isBasketball,
+            onChanged: (value) {
+              setState(() {
+                isBasketball = value!;
+              });
+            })
+      ],
+    );
+  }
+
+  Widget _favor3(String t){
+    return Row(
+      children: <Widget>[
+        SizedBox(width: 150),
+        Text(t),
+        SizedBox(width: 50),
+        Checkbox(
+            value: isBaseball,
+            onChanged: (value) {
+              setState(() {
+                isBaseball = value!;
+              });
+            })
+      ],
+    );
+  }
+
+  Widget _favor4(String t){
+    return Row(
+      children: <Widget>[
+        SizedBox(width: 150),
+        Text(t),
+        SizedBox(width: 50),
+        Checkbox(
+            value: isTennis,
+            onChanged: (value) {
+              setState(() {
+                isTennis = value!;
               });
             })
       ],
