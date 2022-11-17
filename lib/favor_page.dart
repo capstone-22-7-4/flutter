@@ -9,6 +9,12 @@ class favorPage extends StatefulWidget {
 }
 
 class _favorPageState extends State<favorPage> {
+
+  bool? isSoccer = false;
+  bool? isBasketball = false;
+  bool? isBaseball = false;
+  bool? isTennis = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,63 +23,46 @@ class _favorPageState extends State<favorPage> {
           foregroundColor: Colors.black
       ),
       body: Center(
-          child: _doneButton(),
+          child: Form(
+            child: GestureDetector(
+              onTap: () => FocusScope.of(context).unfocus(),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: <Widget>[
+                  Padding(padding: EdgeInsets.fromLTRB(70, 10, 0, 30),
+                      child: Text('본인의 운동스타일을 체크해보세요', style: TextStyle(color: Colors.black, fontSize: 50))),
+                  SizedBox(height: 50),
+                  _favor('축구', isSoccer),
+                  SizedBox(height: 30),
+                  _favor('농구', isBasketball),
+                  SizedBox(height: 30),
+                  _favor('야구', isBaseball),
+                  SizedBox(height: 30),
+                  _favor('테니스', isTennis),
+                  SizedBox(height: 30),
+                  _doneButton()
+                ],
+              ),
+            ),
+          )
       ),
     );
   }
 
-
-  Widget _favor1Input(){
-    return Column(
+  Widget _favor(String t, bool? v){
+    return Row(
       children: [
-        Container(
-          padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
-          margin: EdgeInsets.only(left: 40, right: 50, bottom: 30, top: 10),
-          height: 50,
-          child: TextFormField(
-            decoration: InputDecoration(
-                border: OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(20))), labelText: 'Name'),
-            style: TextStyle(fontSize: 30),
-            // 유효성 검사 나중에 넣기 validator: (value) =>
-          ),
-        )
-      ],
-    );
-  }
-
-  Widget _favor2Input(){
-    return Column(
-      children: [
-        Container(
-          padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
-          margin: EdgeInsets.only(left: 40, right: 50, bottom: 30, top: 10),
-          height: 50,
-          child: TextFormField(
-            decoration: InputDecoration(
-                border: OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(20))), labelText: 'E-mail'),
-            style: TextStyle(fontSize: 30),
-            // 유효성 검사 나중에 넣기 validator: (value) =>
-          ),
-        )
-      ],
-    );
-  }
-
-  Widget _favor3Input(){
-    return Column(
-      children: [
-        Container(
-          padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
-          margin: EdgeInsets.only(left: 40, right: 50, bottom: 30, top: 10),
-          height: 50,
-          child: TextFormField(
-            obscureText: true,
-            decoration: InputDecoration(
-                border: OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(20))), labelText: 'Password'),
-            style: TextStyle(fontSize: 30),
-            // 유효성 검사 나중에 넣기 validator: (value) =>
-          ),
-        )
+        SizedBox(width: 150),
+        Text(t),
+        SizedBox(width: 50),
+        Checkbox(
+            value: v,
+            onChanged: (value) {
+              setState(() {
+                v = value;
+              });
+            })
       ],
     );
   }
