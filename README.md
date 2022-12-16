@@ -1,4 +1,4 @@
-# mapsample
+# Sporty
 
 A new Flutter project.
 
