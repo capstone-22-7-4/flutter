@@ -26,27 +26,29 @@ class _SignPageState extends State<SignPage> {
               key: _formKey,
               child: GestureDetector(
                 onTap: () => FocusScope.of(context).unfocus(),
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: <Widget>[
-                    Padding(padding: EdgeInsets.fromLTRB(70, 10, 0, 30),
-                        child: Text('회원가입', style: TextStyle(color: Colors.black, fontSize: 50))),
-                    Padding(padding: EdgeInsets.fromLTRB(70, 10, 0, 10),
-                        child: Text('이름', style: TextStyle(color: Colors.black, fontSize: 30))),
-                    _showNameInput(),
-                    Padding(padding: EdgeInsets.fromLTRB(70, 10, 0, 10),
-                        child: Text('이메일', style: TextStyle(color: Colors.black, fontSize: 30))),
-                    _showEmailInput(),
-                    Padding(padding: EdgeInsets.fromLTRB(70, 10, 0, 10),
-                        child: Text('비밀번호', style: TextStyle(color: Colors.black, fontSize: 30))),
-                    _showPasswordInput(),
-                    Padding(padding: EdgeInsets.fromLTRB(70, 10, 0, 10),
-                        child: Text('비밀번호 확인', style: TextStyle(color: Colors.black, fontSize: 30))),
-                    _showPasswordAgainInput(),
-                    _nextButton()
-                  ],
-                ),
+                child: SingleChildScrollView(
+                  scrollDirection: Axis.vertical,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      Padding(padding: EdgeInsets.fromLTRB(60, 10, 10, 20),
+                          child: Text('회원가입', style: TextStyle(color: Colors.black, fontSize: 40))),
+                      Padding(padding: EdgeInsets.fromLTRB(60, 10, 0, 10),
+                          child: Text('이름', style: TextStyle(color: Colors.black, fontSize: 20))),
+                      _showNameInput(),
+                      Padding(padding: EdgeInsets.fromLTRB(60, 10, 0, 10),
+                          child: Text('이메일', style: TextStyle(color: Colors.black, fontSize: 20))),
+                      _showEmailInput(),
+                      Padding(padding: EdgeInsets.fromLTRB(60, 10, 0, 10),
+                          child: Text('비밀번호', style: TextStyle(color: Colors.black, fontSize: 20))),
+                      _showPasswordInput(),
+                      Padding(padding: EdgeInsets.fromLTRB(60, 10, 0, 10),
+                          child: Text('비밀번호 확인', style: TextStyle(color: Colors.black, fontSize: 20))),
+                      _showPasswordAgainInput(),
+                      _nextButton()
+                    ],
+                  ),
+                )
               ),
           )
       ),
@@ -58,7 +60,7 @@ class _SignPageState extends State<SignPage> {
       children: [
         Container(
           padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
-          margin: EdgeInsets.only(left: 40, right: 50, bottom: 20, top: 10),
+          margin: EdgeInsets.only(left: 30, right: 30, bottom: 10, top: 10),
           height: 50,
           child: TextFormField(
             focusNode: _nameFocus,
@@ -78,7 +80,7 @@ class _SignPageState extends State<SignPage> {
       children: [
         Container(
           padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
-          margin: EdgeInsets.only(left: 40, right: 50, bottom: 20, top: 10),
+          margin: EdgeInsets.only(left: 30, right: 30, bottom: 10, top: 10),
           height: 50,
           child: TextFormField(
             focusNode: _emailFocus,
@@ -98,7 +100,7 @@ class _SignPageState extends State<SignPage> {
       children: [
         Container(
           padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
-          margin: EdgeInsets.only(left: 40, right: 50, bottom: 20, top: 10),
+          margin: EdgeInsets.only(left: 30, right: 30, bottom: 10, top: 10),
           height: 50,
           child: TextFormField(
             focusNode: _passwordFocus,
@@ -119,7 +121,7 @@ class _SignPageState extends State<SignPage> {
       children: [
         Container(
           padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
-          margin: EdgeInsets.only(left: 40, right: 50, bottom: 20, top: 10),
+          margin: EdgeInsets.only(left: 30, right: 30, bottom: 10, top: 10),
           height: 50,
           child: TextFormField(
             focusNode: _passwordagainFocus,
@@ -144,7 +146,7 @@ class _SignPageState extends State<SignPage> {
                   borderRadius: BorderRadius.circular(20)),
               primary: Color(0xffF78181),
               onPrimary: Colors.black,
-              minimumSize: Size(300,100),
+              minimumSize: Size(200, 60),
               textStyle: const TextStyle(fontSize: 50, fontFamily: 'Jua')
           ),
           onPressed: () {

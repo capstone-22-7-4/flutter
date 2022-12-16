@@ -1,4 +1,4 @@
-package com.example.sporty
+package com.example.mapsample
 
 import io.flutter.embedding.android.FlutterActivity
 

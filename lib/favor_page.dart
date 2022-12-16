@@ -30,17 +30,17 @@ class _favorPageState extends State<favorPage> {
                 mainAxisSize: MainAxisSize.min,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
-                  Padding(padding: EdgeInsets.fromLTRB(70, 10, 0, 30),
-                      child: Text('본인의 운동스타일을 체크해보세요', style: TextStyle(color: Colors.black, fontSize: 50))),
-                  SizedBox(height: 50),
+                  Padding(padding: EdgeInsets.fromLTRB(30, 10, 30, 10),
+                      child: Text('본인의 운동스타일을 체크해보세요', style: TextStyle(color: Colors.black, fontSize: 25))),
+                  SizedBox(height: 30),
                   _favor1('축구'),
-                  SizedBox(height: 30),
+                  SizedBox(height: 20),
                   _favor2('농구'),
-                  SizedBox(height: 30),
+                  SizedBox(height: 20),
                   _favor3('야구'),
-                  SizedBox(height: 30),
+                  SizedBox(height: 20),
                   _favor4('테니스'),
-                  SizedBox(height: 30),
+                  SizedBox(height: 20),
                   _doneButton()
                 ],
               ),
@@ -53,8 +53,8 @@ class _favorPageState extends State<favorPage> {
   Widget _favor1(String t){
     return Row(
       children: <Widget>[
-        SizedBox(width: 150),
-        Text(t),
+        SizedBox(width: 100),
+        Text(t, style: TextStyle(fontSize: 20)),
         SizedBox(width: 50),
         Checkbox(
             value: isSoccer,
@@ -70,8 +70,8 @@ class _favorPageState extends State<favorPage> {
   Widget _favor2(String t){
     return Row(
       children: <Widget>[
-        SizedBox(width: 150),
-        Text(t),
+        SizedBox(width: 100),
+        Text(t, style: TextStyle(fontSize: 20)),
         SizedBox(width: 50),
         Checkbox(
             value: isBasketball,
@@ -87,8 +87,8 @@ class _favorPageState extends State<favorPage> {
   Widget _favor3(String t){
     return Row(
       children: <Widget>[
-        SizedBox(width: 150),
-        Text(t),
+        SizedBox(width: 100),
+        Text(t, style: TextStyle(fontSize: 20)),
         SizedBox(width: 50),
         Checkbox(
             value: isBaseball,
@@ -104,8 +104,8 @@ class _favorPageState extends State<favorPage> {
   Widget _favor4(String t){
     return Row(
       children: <Widget>[
-        SizedBox(width: 150),
-        Text(t),
+        SizedBox(width: 100),
+        Text(t, style: TextStyle(fontSize: 20)),
         SizedBox(width: 50),
         Checkbox(
             value: isTennis,
@@ -127,7 +127,7 @@ class _favorPageState extends State<favorPage> {
                       borderRadius: BorderRadius.circular(20)),
                   primary: Color(0xffF78181),
                   onPrimary: Colors.black,
-                  minimumSize: Size(300,100),
+                  minimumSize: Size(250,80),
                   textStyle: const TextStyle(fontSize: 50, fontFamily: 'Jua')
               ),
               onPressed: () {

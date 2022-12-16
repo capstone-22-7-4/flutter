@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'widget.dart';
 
 class classPage extends StatefulWidget {
   const classPage({Key? key}) : super(key: key);
@@ -37,7 +38,7 @@ class _classPageState extends State<classPage> {
           SizedBox(height: 30),
           selectButton(context),
           SizedBox(height: 50),
-          showMap(whichPic)
+          showM()
         ],
       ),
     );

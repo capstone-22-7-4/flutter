@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'widget.dart';
 
 class scorePage extends StatefulWidget {
   const scorePage({Key? key}) : super(key: key);
@@ -15,17 +16,8 @@ class _scorePageState extends State<scorePage> {
       appBar: AppBar(
         backgroundColor: Colors.white,
         foregroundColor: Colors.black,
-        actions: <Widget>[
-          IconButton(icon: Icon(Icons.notifications),
-              onPressed: () {
-                print('notifications button is clicked');
-              }),
-          IconButton(icon: Icon(Icons.menu),
-              onPressed: () {
-                print('menu button is clicked');
-              }),
-        ],
       ),
+      endDrawer: user(context),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget> [
@@ -132,13 +124,30 @@ class _scorePageState extends State<scorePage> {
     );
   }
 
-  //var nameset = ['최동우', '전예원', '임창환']; 나중에쓸거
+  final List<String> nameset = <String>['최동우', '전예원', '임창환'];
 
-  Widget scoreBoard(){
+  /*Widget scoreBoard(){
     return SizedBox(
         width: 330,
         height: 341,
         child: Image.asset('assets/scoreBoard.png')
+    );
+  }*/
+
+  Widget scoreBoard(){
+    return Container(
+      height: 100,
+      child: ListView.builder(
+          padding: EdgeInsets.all(15),
+          itemCount: nameset.length,
+          scrollDirection: Axis.vertical,
+          itemBuilder: (BuildContext context, int index) {
+            return Container(
+              padding: EdgeInsets.all(5),
+              child: Text('${nameset[index]}'),
+            );
+          }
+      ),
     );
   }
 

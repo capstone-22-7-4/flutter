@@ -1,4 +1,16 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
+import 'reserve_page.dart';
+//import 'package:http/http.dart' as http;
+import 'widget.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
+
+/*fetch() async{
+  var res = await http.get("http://192.168.56.1:8880");
+  return json.decode(res.body);
+}*/
+
 
 class gamePage extends StatefulWidget {
   const gamePage({Key? key}) : super(key: key);
@@ -15,17 +27,8 @@ class _gamePageState extends State<gamePage> {
       appBar: AppBar(
         backgroundColor: Colors.white,
         foregroundColor: Colors.black,
-        actions: <Widget>[
-          IconButton(icon: Icon(Icons.notifications),
-              onPressed: () {
-                print('notifications button is clicked');
-          }),
-          IconButton(icon: Icon(Icons.menu),
-              onPressed: () {
-                print('menu button is clicked');
-          }),
-      ],
-    ),
+      ),
+      endDrawer: user(context),
       body: Column(
         children: <Widget> [
           SizedBox(height: 40),
@@ -33,7 +36,9 @@ class _gamePageState extends State<gamePage> {
           SizedBox(height: 20),
           selectLocation(),
           SizedBox(height: 50),
-          showMap()
+          temp(),
+          showM(),
+          //reserveList()
         ],
       ),
     );
@@ -99,7 +104,7 @@ class _gamePageState extends State<gamePage> {
               },
             )
           ),
-          SizedBox(width: 70),
+          const SizedBox(width: 70),
           SizedBox(
             width: 100,
             child: DropdownButton(
@@ -125,7 +130,7 @@ class _gamePageState extends State<gamePage> {
     );
   }
 
-  Widget showMap() {
+  /*Widget showMap() {  // 사진으로 띄우던거
     return Center(
       child: sportValue=='축구' ? SizedBox(
           width: 500,
@@ -137,5 +142,24 @@ class _gamePageState extends State<gamePage> {
           child: Image.asset('assets/map.png')
       )
     );
+  }*/
+
+  Widget temp() {
+    return ElevatedButton(
+      style: ElevatedButton.styleFrom(
+          shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(20)),
+          primary: Color(0xffFBEFF2),
+          onPrimary: Colors.black,
+          minimumSize: Size(100,40),
+          textStyle: const TextStyle(fontSize: 10, fontFamily: 'Jua')
+      ),
+      onPressed: () {
+        Navigator.push(context,
+          MaterialPageRoute(builder: (context) => reservePage()),);
+      },
+      child: Text('예약화면 보기'),
+    );
   }
+
 }

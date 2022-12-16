@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'game_page.dart';
 import 'class_page.dart';
 import 'score_page.dart';
+import 'community.dart';
+import 'widget.dart';
 
 class MenuPage extends StatelessWidget {
 
@@ -11,23 +13,14 @@ class MenuPage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.white,
         foregroundColor: Colors.black,
-        actions: <Widget>[
-          IconButton(icon: Icon(Icons.notifications),
-              onPressed: () {
-                print('notifications button is clicked');
-              }),
-          IconButton(icon: Icon(Icons.menu),
-              onPressed: () {
-                print('menu button is clicked');
-              }),
-        ],
       ),
+      endDrawer: user(context),
       body: Center(
           child: Column(
             children: <Widget> [
               SizedBox(height: 40),
               personalInfo(),
-              SizedBox(height: 70),
+              SizedBox(height: 50),
               menu(context)
             ],
           )
@@ -40,6 +33,7 @@ class MenuPage extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          SizedBox(width: 10),
           Container(
               height: 100,
               width: 100,
@@ -51,7 +45,7 @@ class MenuPage extends StatelessWidget {
           SizedBox(width: 20),
           Container(
               height: 100,
-              width: 300,
+              width: 240,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.all(Radius.circular(20)),
                   gradient: LinearGradient(
@@ -68,11 +62,12 @@ class MenuPage extends StatelessWidget {
                 children: [
                   SizedBox(height: 20),
                   Text(
-                    '    사용자님 반갑습니다', style: TextStyle(fontSize: 20),
+                    '    전예원님 반갑습니다', style: TextStyle(fontSize: 20),
                   ),
                   SizedBox(height: 10),
                   Row(
                     children: const [
+                      SizedBox(width: 10),
                       Icon(Icons.location_on),
                       SizedBox(width: 10),
                       Text('현재 지역 : 동작구 상도동')
@@ -118,8 +113,8 @@ class MenuPage extends StatelessWidget {
       },
       child: Container(
           alignment: Alignment.bottomCenter,
-          height: 200,
-          width: 200,
+          height: 170,
+          width: 170,
           decoration: BoxDecoration(
               borderRadius: BorderRadius.all(Radius.circular(15)),
               gradient: LinearGradient(
@@ -144,8 +139,8 @@ class MenuPage extends StatelessWidget {
       },
       child: Container(
           alignment: Alignment.bottomCenter,
-          height: 200,
-          width: 200,
+          height: 170,
+          width: 170,
           decoration: BoxDecoration(
               borderRadius: BorderRadius.all(Radius.circular(15)),
               gradient: LinearGradient(
@@ -170,8 +165,8 @@ class MenuPage extends StatelessWidget {
       },
       child: Container(
           alignment: Alignment.bottomCenter,
-          height: 200,
-          width: 200,
+          height: 170,
+          width: 170,
           decoration: BoxDecoration(
               borderRadius: BorderRadius.all(Radius.circular(15)),
               gradient: LinearGradient(
@@ -192,12 +187,12 @@ class MenuPage extends StatelessWidget {
     return InkWell(
       onTap: () {
         Navigator.push(context,
-          MaterialPageRoute(builder: (context) => samplePage()),);
+          MaterialPageRoute(builder: (context) => communityPage()),);
       },
       child: Container(
           alignment: Alignment.bottomCenter,
-          height: 200,
-          width: 200,
+          height: 170,
+          width: 170,
           decoration: BoxDecoration(
               borderRadius: BorderRadius.all(Radius.circular(15)),
               gradient: LinearGradient(
@@ -211,17 +206,6 @@ class MenuPage extends StatelessWidget {
           ),
           child: Text(s, style: TextStyle(fontSize: 20),)
       ),
-    );
-  }
-}
-
-class samplePage extends StatelessWidget {
-  const samplePage({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Text('커뮤니티', style: TextStyle(fontSize: 30, color: Colors.black)),
     );
   }
 }

@@ -13,6 +13,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Sporty',
       theme: ThemeData(fontFamily: 'Jua'),
       home: logoPage(), //앱이 정상적으로 실행되었을 때 가장 먼저 보여주는 화면
@@ -56,17 +57,17 @@ class HomePage extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
-            Image.asset('assets/exercise.png'),
-            const SizedBox(height: 50), //간격조정
+            Image.asset('assets/exercise.png', width: 300, height: 300),
+            const SizedBox(height: 40), //간격조정
             Text('Sporty', style: TextStyle(color: Colors.black, fontSize: 50, fontFamily: "Jua")),
-            const SizedBox(height: 70),
+            const SizedBox(height: 50),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(20)),
                   primary: Color(0xff9EF3F3),
                   onPrimary: Colors.black,
-                  minimumSize: Size(500,100),
+                  minimumSize: Size(350,80),
                   textStyle: const TextStyle(fontSize: 30, fontFamily: 'Jua')
               ),
               onPressed: () {
@@ -82,7 +83,7 @@ class HomePage extends StatelessWidget {
                       borderRadius: BorderRadius.circular(20)),
                   primary: Color(0xff9EF3F3),
                   onPrimary: Colors.black,
-                  minimumSize: Size(500,100),
+                  minimumSize: Size(350,80),
                   textStyle: const TextStyle(fontSize: 30, fontFamily: 'Jua')
               ),
               onPressed: () {
